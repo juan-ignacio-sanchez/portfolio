@@ -10,11 +10,13 @@
   },
   "dependencies": {
     "@next/font": "^13.5.3",
+    "canvas-confetti": "^1.9.0",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest"
   },
   "devDependencies": {
+    "@types/canvas-confetti": "^1.6.1",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
