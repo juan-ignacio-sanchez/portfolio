@@ -60,8 +60,8 @@ function Profile({
         my journey with React
       </p>
       <p>
-        Take a look around &#128073; to know about my experience, tools I've
-        used in the past and more about myself.
+        Take a look around &#128073; to know about my experience, tools
+        I&apos;ve used in the past and more about myself.
       </p>
       <footer>
         <LinkIcon
