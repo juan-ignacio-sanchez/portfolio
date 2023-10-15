@@ -3,5 +3,8 @@
   flex-direction: row;
   min-height: 100vh;
   padding: 0;
-  background: var(--card-hovered-background);
+  align-content: center;
+  justify-content: center;
+  padding: 2rem;
+  font-family: var(--global-font-family);
 }

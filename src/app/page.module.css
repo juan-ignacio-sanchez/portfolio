@@ -4,7 +4,7 @@
   min-height: 100vh;
   padding: 0;
   color: var(--text-foreground-color);
-  font-family: var(--global-font-family)
+  font-family: var(--global-font-family);
 }
 
 .profile {
@@ -45,11 +45,12 @@
 
 .profile footer img {
   margin: 1rem;
-  filter: grayscale(100%) saturate(100);
+  filter: grayscale(100%);
 }
 
 .profile footer img:hover {
-  filter: grayscale(0) ;
+  filter: grayscale(0);
+  transition: all 0.2s ease-in-out;
 }
 
 .description a {

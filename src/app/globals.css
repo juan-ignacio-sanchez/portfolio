@@ -52,6 +52,8 @@ body {
   max-width: 1500px;
   margin: 0 auto;
   overflow-x: hidden;
+  background-image: url("../../public/images/background.png");
+
 }
 
 a {
