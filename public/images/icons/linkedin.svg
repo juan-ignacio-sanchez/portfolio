@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
+
+<svg
+   width="666.66669"
+   height="666.66669"
+   viewBox="0 0 40.000001 40.000001"
+   fill="none"
+   version="1.1"
+   id="svg2"
+   sodipodi:docname="linkedin.svg"
+   inkscape:version="1.3 (0e150ed, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="namedview2"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="true"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.25153465"
+     inkscape:cx="77.524111"
+     inkscape:cy="600.31491"
+     inkscape:window-width="1440"
+     inkscape:window-height="777"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showgrid="true">
+    <inkscape:grid
+       id="grid5"
+       units="px"
+       originx="0"
+       originy="0"
+       spacingx="0.06"
+       spacingy="0.06"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="5"
+       dotted="false"
+       gridanglex="30"
+       gridanglez="30"
+       visible="true" />
+  </sodipodi:namedview>
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="Layer 1">
+    <path
+       id="path5"
+       style="fill:#ff6b6b;stroke:none;stroke-width:0.0567308;fill-opacity:1"
+       d="M 20.000039 0 A 20 20 0 0 0 0 20.000039 A 20 20 0 0 0 20.000039 39.999961 A 20 20 0 0 0 39.999961 20.000039 A 20 20 0 0 0 20.000039 0 z M 12.372656 8.000039 C 13.826755 8.000039 14.746248 8.9783075 14.774648 10.283906 C 14.774648 11.529005 13.826678 12.536601 12.34418 12.536601 C 10.919381 12.536601 9.971264 11.529005 10.000664 10.283906 C 9.971264 8.9783075 10.919358 8.000039 12.372656 8.000039 z M 26.810156 13.992656 C 29.77525 13.992656 31.999453 15.950153 31.999453 20.218945 L 31.999453 28.820976 L 27.492187 28.820976 L 27.492187 20.783789 C 27.492187 18.914393 26.840354 17.639883 25.209258 17.639883 C 23.96326 17.639883 23.222428 18.499928 22.926328 19.329726 C 22.807128 19.626826 22.748437 20.041222 22.748437 20.457422 L 22.748437 28.820976 L 18.241055 28.820976 L 18.241055 18.944648 L 18.239297 18.944648 C 18.239297 17.135752 18.179717 15.593501 18.120117 14.318203 L 22.035117 14.318203 L 22.243242 16.305 L 22.332187 16.305 C 22.925387 15.385402 24.407962 13.992656 26.810156 13.992656 z M 10.119844 14.316211 L 14.627109 14.316211 L 14.627109 28.818047 L 10.119844 28.818047 L 10.119844 14.316211 z " />
+  </g>
+</svg>
