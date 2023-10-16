@@ -49,11 +49,11 @@
 
 html,
 body {
-  max-width: 1500px;
+  max-width: 1800px;
   margin: 0 auto;
   overflow-x: hidden;
   background-image: url("../../public/images/background.png");
-
+  max-height: 100vh !important;
 }
 
 a {
