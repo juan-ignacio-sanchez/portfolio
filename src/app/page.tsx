@@ -7,64 +7,6 @@ import styles from "./page.module.css";
 
 const roboto = Roboto({ subsets: ["latin"], weight: "400" });
 
-import { useEffect, useRef } from "react";
-
-const isPrime = (n) => {
-  if (n <= 1) return false;
-  if (n <= 3) return true;
-  if (n % 2 === 0 || n % 3 === 0) return false;
-
-  for (let i = 5; i * i <= n; i += 6) {
-    if (n % i === 0 || n % (i + 2) === 0) {
-      return false;
-    }
-  }
-
-  return true;
-};
-
-const LinePlot = () => {
-  const canvasRef = useRef(null);
-
-  const drawShape = (ctx, canvas) => {
-    const centerX = canvas.width / 2;
-    const centerY = canvas.height / 2;
-    const radius = Math.min(centerX, centerY) * 0.8;
-
-    ctx.fillStyle = "red"; // Dot color
-
-    for (let p = 1; p <= 1000; p++) {
-      if (isPrime(p) && p % 10 == 7) {
-        const x = centerX + radius * Math.cos(p);
-        const y = centerY + radius * Math.sin(p);
-
-        ctx.beginPath();
-        ctx.arc(x, y, 4, 0, 2 * Math.PI);
-        ctx.fillStyle = "rgba(255, 0, 0, 0.05)";
-        ctx.fill();
-      }
-    }
-  };
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-
-    if (canvas) {
-      const ctx = canvas.getContext("2d");
-      drawShape(ctx, canvas);
-    }
-  }, []);
-
-  return (
-    <canvas
-      ref={canvasRef}
-      width={400}
-      height={300}
-      style={{ border: "1px solid black" }}
-    ></canvas>
-  );
-};
-
 function LinkIcon({
   link,
   icon,
@@ -306,7 +248,6 @@ function Content() {
           stroke-width="2"
         />
       </svg>
-      <LinePlot />
     </article>
   );
 }
