@@ -8,63 +8,67 @@ export default function RooMe() {
           Roo<span className={styles.titleHighlight}>Me</span>
         </h1>
         <h2>
-          Find the right place, <span>with the right people</span>
+          Find Your Ideal Space, <span>Share It with the Perfect Roommate</span>
         </h2>
         <footer>
           <a href="#main-section">
-            Let's see how
+            Let's go
             <img src="./images/icons/arrow.svg" width="32px" height="32px" />
           </a>
         </footer>
       </header>
       <main id="main-section">
         <section>
-          <h1>1. Find a place</h1>
-          <p>
-            As they rounded a bend in the path that ran beside the river, Lara
-            recognized the silhouette of a fig tree atop a nearby hill. The
-            weather was hot and the days were long. The fig tree was in full
-            leaf, but not yet bearing fruit. Soon Lara spotted other
-            landmarks—an outcropping of limestone beside the path that had a
-            silhouette like a man’s face, a marshy spot beside the river where
-            the waterfowl were easily startled, a tall tree that looked like a
-            man with his arms upraised. They were drawing near to the place
-            where there was an island in the river. The island was a good spot
-            to make camp.
-          </p>
+          <h1>1. The place</h1>
+          <span className={styles.stepCard}>
+            <img src="./images/landing/living_room.jpg" />
+            <span className={styles.stepCardContent}>
+              <h2>
+                Find your ideal place with us. Explore options, set a budget,
+                and decide where your next adventure begins.
+              </h2>
+              <a href="/about">Find your ideal home</a>
+            </span>
+          </span>
         </section>
 
         <section>
-          <h2>2. Find people interested in that place</h2>
-          <p>
-            As they rounded a bend in the path that ran beside the river, Lara
-            recognized the silhouette of a fig tree atop a nearby hill. The
-            weather was hot and the days were long. The fig tree was in full
-            leaf, but not yet bearing fruit. Soon Lara spotted other
-            landmarks—an outcropping of limestone beside the path that had a
-            silhouette like a man’s face, a marshy spot beside the river where
-            the waterfowl were easily startled, a tall tree that looked like a
-            man with his arms upraised. They were drawing near to the place
-            where there was an island in the river. The island was a good spot
-            to make camp.
-          </p>
+          <h1>2. The people</h1>
+          <span className={styles.stepCard}>
+            <img
+              style={{ objectPosition: "center" }}
+              src="./images/landing/boots.jpg"
+            />
+            <span className={styles.stepCardContent}>
+              <h2>
+                Discover a compatible match, share a living space, and embark on
+                this journey together.
+              </h2>
+              <a href="/about">Meet your next roommate</a>
+            </span>
+          </span>
         </section>
         <section>
-          <h2>3. Make an offer</h2>
-          <p>
-            As they rounded a bend in the path that ran beside the river, Lara
-            recognized the silhouette of a fig tree atop a nearby hill. The
-            weather was hot and the days were long. The fig tree was in full
-            leaf, but not yet bearing fruit. Soon Lara spotted other
-            landmarks—an outcropping of limestone beside the path that had a
-            silhouette like a man’s face, a marshy spot beside the river where
-            the waterfowl were easily startled, a tall tree that looked like a
-            man with his arms upraised. They were drawing near to the place
-            where there was an island in the river. The island was a good spot
-            to make camp.
-          </p>
+          <h1>3. Make an offer</h1>
+          <span className={styles.stepCard}>
+            <img
+              style={{ objectPosition: "center" }}
+              src="./images/landing/future.jpg"
+            />
+            <span className={styles.stepCardContent}>
+              <h2>
+                Send your offer, secure your new place, and embark on your next
+                chapter.
+              </h2>
+              <a href="/about">Send an offer now</a>
+            </span>
+          </span>
         </section>
       </main>
+      <footer>
+        <p>About us</p>
+        <p>Contact</p>
+      </footer>
     </>
   );
 }
