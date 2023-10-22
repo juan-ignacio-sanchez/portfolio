@@ -1,0 +1,49 @@
+.titleHighlight {
+  color: var(--highlight-color);
+}
+
+.stepCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.stepCardContent {
+  display: flex;
+  flex-direction: column;
+  justify-items: space-between;
+  padding-left: 0rem;
+}
+
+.stepCard a {
+  text-decoration: none;
+  font-size: larger;
+  font-weight: 500;
+  color: var(--secondary-background-color);
+  background-color: var(--text-color);
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.stepCard a:hover {
+  transition: background-color 0.3s ease;
+  color: var(--text-color);
+  background-color: var(--highlight-color);
+}
+
+@media only screen and (min-width: 800px) {
+  /* For tablets: */
+  .stepCard {
+    display: flex;
+    flex-direction: row;
+  }
+  .stepCardContent {
+    display: "flex";
+    flex-direction: "column";
+    padding-left: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  /* For desktop: */
+}
