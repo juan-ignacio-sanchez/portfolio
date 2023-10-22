@@ -7,6 +7,64 @@ import styles from "./page.module.css";
 
 const roboto = Roboto({ subsets: ["latin"], weight: "400" });
 
+import { useEffect, useRef } from "react";
+
+const isPrime = (n) => {
+  if (n <= 1) return false;
+  if (n <= 3) return true;
+  if (n % 2 === 0 || n % 3 === 0) return false;
+
+  for (let i = 5; i * i <= n; i += 6) {
+    if (n % i === 0 || n % (i + 2) === 0) {
+      return false;
+    }
+  }
+
+  return true;
+};
+
+const LinePlot = () => {
+  const canvasRef = useRef(null);
+
+  const drawShape = (ctx, canvas) => {
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height / 2;
+    const radius = Math.min(centerX, centerY) * 0.8;
+
+    ctx.fillStyle = "red"; // Dot color
+
+    for (let p = 1; p <= 1000; p++) {
+      if (isPrime(p) && p % 10 == 7) {
+        const x = centerX + radius * Math.cos(p);
+        const y = centerY + radius * Math.sin(p);
+
+        ctx.beginPath();
+        ctx.arc(x, y, 4, 0, 2 * Math.PI);
+        ctx.fillStyle = "rgba(255, 0, 0, 0.05)";
+        ctx.fill();
+      }
+    }
+  };
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+
+    if (canvas) {
+      const ctx = canvas.getContext("2d");
+      drawShape(ctx, canvas);
+    }
+  }, []);
+
+  return (
+    <canvas
+      ref={canvasRef}
+      width={400}
+      height={300}
+      style={{ border: "1px solid black" }}
+    ></canvas>
+  );
+};
+
 function LinkIcon({
   link,
   icon,
@@ -17,7 +75,7 @@ function LinkIcon({
   alt: string;
 }) {
   return (
-    <Link href={link}>
+    <Link href={link} rel="noopener noreferrer" target="_blank">
       <Image
         src={`./images/icons/${icon}.svg`}
         alt={alt}
@@ -48,22 +106,7 @@ function Profile({
         onClick={toggleProfile}
       />
       <h1>Juan Ignacio Sánchez Sampayo </h1>
-
-      <p>
-        I am a software developer, based in Montevideo, Uruguay, and have 9+
-        years of experience working with Python/Django and similar backend
-        technologies.
-      </p>
-
-      <p>
-        I recently rediscovered the beauty of frontend development and started
-        my journey with React
-      </p>
-      <p>
-        Take a look around &#128073; to know about my experience, tools
-        I&apos;ve used in the past and more about myself.
-      </p>
-      <footer>
+      <span className={styles.contactCard}>
         <LinkIcon
           link="https://www.linkedin.com/in/jiss2891/"
           icon="linkedin"
@@ -79,7 +122,21 @@ function Profile({
           icon="itch"
           alt="Itch page"
         />
-      </footer>
+      </span>
+      <p>
+        I am a software developer, based in Montevideo, Uruguay, and have 9+
+        years of experience working with Python/Django and similar backend
+        technologies.
+      </p>
+
+      <p>
+        I recently rediscovered the beauty of frontend development and started
+        my journey with React
+      </p>
+      <p>
+        Take a look around &#128073; to know about my experience, tools
+        I&apos;ve used in the past and more about myself.
+      </p>
     </section>
   );
 }
@@ -87,6 +144,7 @@ function Profile({
 function Card({
   initialTitle,
   description,
+  endDescription,
   icon,
   visible,
   index,
@@ -97,6 +155,7 @@ function Card({
 }: {
   initialTitle: string;
   description: string;
+  endDescription: string;
   icon: string;
   visible: boolean;
   index: number;
@@ -108,25 +167,30 @@ function Card({
   const [title, setTitle] = useState(initialTitle);
 
   return (
-    <span
-      style={{
-        display: visible ? "grid" : "none",
-      }}
-      className={styleClass}
-      onClick={handleClick}
-    >
-      <span className={styles.description}>
-        <h2>{title}</h2>
-        <p>{description}</p>
-      </span>
-      <Image
-        src={`./images/${icon}.svg`}
-        alt="card icon"
-        width={width}
-        height={height}
-        priority
-      />
-    </span>
+    <>
+      {visible && (
+        <span className={styleClass} onClick={handleClick}>
+          {description != "" && (
+            <span className={styles.description}>
+              <h2>{title}</h2>
+              <p>{description}</p>
+            </span>
+          )}
+          <Image
+            src={`./images/${icon}.svg`}
+            alt="card icon"
+            width={width}
+            height={height}
+            priority
+          />
+          {endDescription != "" && (
+            <span className={styles.description}>
+              <p>{endDescription}</p>
+            </span>
+          )}
+        </span>
+      )}
+    </>
   );
 }
 
@@ -218,6 +282,31 @@ function Content() {
         developer, using django, django rest framework, knockoutJS, Postgresql
         and mysql.
       </p>
+      <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+        <line
+          x1="10"
+          y1="190"
+          x2="190"
+          y2="190"
+          stroke="black"
+          stroke-width="2"
+        />
+        <line
+          x1="10"
+          y1="10"
+          x2="10"
+          y2="190"
+          stroke="black"
+          stroke-width="2"
+        />
+        <polyline
+          points="20,190 40,170 60,140 80,100 100,60 120,20"
+          fill="none"
+          stroke="blue"
+          stroke-width="2"
+        />
+      </svg>
+      <LinePlot />
     </article>
   );
 }
@@ -256,6 +345,7 @@ export default function Home() {
           <BackCard
             initialTitle=""
             description=""
+            endDescription="Back"
             icon="back"
             visible={selectedCard != -1}
             index={0}
@@ -282,6 +372,15 @@ export default function Home() {
 
           <PageCard
             initialTitle="About me"
+            description="A little bit about my life"
+            icon="about"
+            visible={selectedCard == -1}
+            index={2}
+            handleClick={() => selectCard(2)}
+          />
+
+          <PageCard
+            initialTitle="Open Source Projects"
             description="A little bit about my life"
             icon="about"
             visible={selectedCard == -1}

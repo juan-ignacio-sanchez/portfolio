@@ -1,68 +1,131 @@
 :root {
-  --max-width: 1100px;
-  --border-radius: 12px;
+  /* for RooMe */
+  /* Colors */
+  --background-color: #222831;
+  --secondary-background-color: #393e46;
+  --highlight-color: #00adb5;
+  --text-color: #eeeeee;
+  --font-family: Verdana;
 
-  --global-background-color: #F6F6F6;
-  --text-foreground-color: #333333;
-  --text-hovered-color: #FF6B6B;
-  --profile-background-color: #EAEAEA;
-  --card-background: #FFFFFF;
-  --card-hovered-background: #FF6B6B;
-
-  --global-font-family: Verdana;
+  /* Sizes */
+  --max-width: 900px;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--background-color);
+  color: var(--text-color);
 
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(to bottom right,
-        rgba(1, 65, 255, 0),
-        rgba(1, 65, 255, 0),
-        rgba(1, 65, 255, 0.3));
+  font-family: var(--font-family);
+}
 
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(#ffffff80,
-        #ffffff40,
-        #ffffff30,
-        #ffffff20,
-        #ffffff10,
-        #ffffff10,
-        #ffffff80);
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  scroll-snap-align: start;
+}
 
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
+header h1 {
+  margin-bottom: 1px;
+  margin-top: 1rem;
+  font-size: 40vw;
+}
+
+header span {
+  display: flex;
+  justify-self: flex-end;
+}
+
+header h2 {
+  font-size: 5vw;
+  text-align: center;
+  text-wrap: pretty;
+  font-weight: 300;
+  letter-spacing: 0.05rem;
+  word-spacing: 0.1rem;
+}
+
+header footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: 10vh;
+  font-size: larger;
+  font-weight: 300;
+  letter-spacing: 0.05rem;
+  word-spacing: 0.1rem;
+}
+
+header footer a {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+header footer img {
+  filter: saturate(0%) brightness(200%);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  max-width: var(--max-width);
+  padding: 1rem;
+}
+
+main > section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  scroll-snap-align: start;
+  min-height: 100vh;
+  height: max-content;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+  /* For tablets: */
+  header h1 {
+    font-size: 20vw;
+  }
+
+  header h2 {
+    font-size: 3vw;
+    text-align: center;
+    text-wrap: pretty;
+    font-weight: 300;
+    letter-spacing: 0.05rem;
+    word-spacing: 0.1rem;
+  }
+
+  header span {
+    display: inline-flex;
   }
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
+@media only screen and (min-width: 1024px) {
+  /* For desktop: */
+  header h1 {
+    font-size: 15vw;
+  }
 
-html,
-body {
-  max-width: 1800px;
-  margin: 0 auto;
-  overflow-x: hidden;
-  background-image: url("../../public/images/background.png");
-  max-height: 100vh !important;
-}
+  header h2 {
+    font-size: 2vw;
+    text-align: center;
+    text-wrap: pretty;
+    font-weight: 300;
+    letter-spacing: 0.05rem;
+    word-spacing: 0.1rem;
+  }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+  header span {
+    display: inline-flex;
   }
 }
