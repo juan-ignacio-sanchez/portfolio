@@ -12,7 +12,7 @@ export default function RooMe() {
         </h2>
         <footer>
           <a href="#main-section">
-            Let's go
+            Let&apos;s go
             <img src="./images/icons/arrow.svg" width="32px" height="32px" />
           </a>
         </footer>
