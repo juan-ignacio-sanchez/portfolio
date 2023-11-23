@@ -1,74 +1,80 @@
 import styles from "./page.module.css";
 
+// const pacifico = Pacifico({ subsets: ["latin"] });
+
+function Section({
+  title,
+  description,
+  imgSrc,
+}: {
+  title: string;
+  description: string;
+  imgSrc: string;
+}) {
+  let titleArr = title.trim().split(" ");
+  let titleHead = titleArr.slice(0, -1).join(" ");
+  let titleTail = titleArr.slice(-1).join(" ");
+
+  return (
+    <>
+      <section>
+        <h1>
+          {titleHead} <span className={styles.titleHighlight}>{titleTail}</span>
+        </h1>
+        <span className={styles.stepCard}>
+          <img src={imgSrc} />
+          <span className={styles.stepCardContent}>
+            <p>{description}</p>
+          </span>
+        </span>
+      </section>
+    </>
+  );
+}
+
 export default function RooMe() {
   return (
     <>
-      <header>
-        <h1>
-          Roo<span className={styles.titleHighlight}>Me</span>
-        </h1>
-        <h2>
-          Find Your Ideal Space, <span>Share It with the Perfect Roommate</span>
-        </h2>
-        <footer>
-          <a href="#main-section">
-            Let&apos;s go
-            <img src="./images/icons/arrow.svg" width="32px" height="32px" />
-          </a>
-        </footer>
-      </header>
-      <main id="main-section">
-        <section>
-          <h1>1. The place</h1>
-          <span className={styles.stepCard}>
-            <img src="./images/landing/living_room.jpg" />
-            <span className={styles.stepCardContent}>
-              <h2>
-                Find your ideal place with us. Explore options, set a budget,
-                and decide where your next adventure begins.
-              </h2>
-              <a href="/about">Find your ideal home</a>
-            </span>
-          </span>
-        </section>
+      <header className={styles.header}>
+        <div>
+          <nav>
+            <p>
+              <span>Roo</span>
+              <span className={styles.titleHighlight}>Me</span>
+            </p>
+            <img src="/images/icons/menu.svg" width="32px" />
+          </nav>
 
-        <section>
-          <h1>2. The people</h1>
-          <span className={styles.stepCard}>
-            <img
-              style={{ objectPosition: "center" }}
-              src="./images/landing/boots.jpg"
-            />
-            <span className={styles.stepCardContent}>
-              <h2>
-                Discover a compatible match, share a living space, and embark on
-                this journey together.
-              </h2>
-              <a href="/about">Meet your next roommate</a>
-            </span>
-          </span>
-        </section>
-        <section>
-          <h1>3. Make an offer</h1>
-          <span className={styles.stepCard}>
-            <img
-              style={{ objectPosition: "center" }}
-              src="./images/landing/future.jpg"
-            />
-            <span className={styles.stepCardContent}>
-              <h2>
-                Send your offer, secure your new place, and embark on your next
-                chapter.
-              </h2>
-              <a href="/about">Send an offer now</a>
-            </span>
-          </span>
-        </section>
+          <h1>
+            Your Home Awaits<span className={styles.titleHighlight}>.</span>
+          </h1>
+          <p>Join the revolution in co-living with RooMe</p>
+          <button>Start for free</button>
+        </div>
+      </header>
+      <main>
+        <div className={styles.bulletList}>
+          <h1>
+            Co-Living, <span className={styles.titleHighlight}>Simplified</span>
+          </h1>
+          <img src="/images/landing/coffee_break.svg" />
+          <p>
+            Explore across hundreds of beautiful houses, set your budget and
+            will find great options for you
+          </p>
+          <img src="/images/landing/step1_0.jpg" />
+          <h2>Share the space with the perfect match</h2>
+          <p>
+            Finding a roommate can be hard but with our AI powered system
+            connecting with people matching your core values has never been
+            easier
+          </p>
+          <img src="/images/landing/boots.jpg" />
+          <h2>Affordable but neat</h2>
+          <p>Explore across hundreds of beautiful houses</p>
+          <img src="/images/landing/coffee.jpg" />
+        </div>
       </main>
-      <footer>
-        <p>About us</p>
-        <p>Contact</p>
-      </footer>
     </>
   );
 }
