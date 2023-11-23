@@ -72,8 +72,8 @@ export default function RooMe() {
           </h2>
           <img src="/images/landing/learning.svg" />
           <p>
-            Don't waste time and money looking day after day for the perfect
-            place, let us find it for you.
+            Don&apos;t waste time and money looking day after day for the
+            perfect place, let us find it for you.
           </p>
           <hr></hr>
 
