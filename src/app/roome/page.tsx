@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
 
@@ -59,7 +60,13 @@ export default function RooMe() {
           <h2>
             Co-Living, <span className={styles.titleHighlight}>Simplified</span>
           </h2>
-          <img src="/images/landing/coffee_break.svg" />
+          <Image
+            src={`./images/landing/coffee_break.svg`}
+            alt="card icon"
+            width={300}
+            height={300}
+            priority
+          />
           <p>
             Explore across hundreds of beautiful houses, set your budget and we
             will find great options for you
@@ -70,7 +77,13 @@ export default function RooMe() {
             Use your time in what{" "}
             <span className={styles.titleHighlight}>matters the most</span>
           </h2>
-          <img src="/images/landing/learning.svg" />
+          <Image
+            src={`./images/landing/learning.svg`}
+            alt="card icon"
+            width={300}
+            height={300}
+            priority
+          />
           <p>
             Don&apos;t waste time and money looking day after day for the
             perfect place, let us find it for you.
@@ -81,7 +94,13 @@ export default function RooMe() {
             Start building your{" "}
             <span className={styles.titleHighlight}>next chapter!</span>
           </h2>
-          <img src="/images/landing/house.svg" />
+          <Image
+            src={`./images/landing/house.svg`}
+            alt="card icon"
+            width={300}
+            height={300}
+            priority
+          />
           <p>The perfect house is around the corner, just one click away!</p>
           <Link href="/" className={styles.callToAction}>
             Stay tuned!
