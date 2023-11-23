@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
+import { Lora } from "next/font/google";
 import "./globals.css";
+
+const playfair = Lora({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   title: "Juan Ignacio Sánchez",
@@ -13,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={playfair.className}>{children}</body>
     </html>
   );
 }
