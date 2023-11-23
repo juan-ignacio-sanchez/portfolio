@@ -3,10 +3,7 @@
   background-color: var(--secondary-background-color);
   background-position: center bottom;
   background-size: cover;
-  gap: 1rem;
-  align-items: center;
   height: 100svh;
-  margin-bottom: 4rem;
 }
 
 .header > div {
@@ -14,53 +11,61 @@
   flex-direction: column;
   align-items: center;
   margin: 0;
-  backdrop-filter: blur(4px) brightness(0.6);
   height: 100%;
   width: 100%;
 }
 
-.header nav {
-  position: sticky;
+.header p {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.menu {
+  position: fixed;
   top: 0;
   display: flex;
   justify-content: space-between;
   background-color: #333333;
   max-height: 4.5rem;
   width: 100%;
+  z-index: 1;
 }
 
-.header nav p {
+.menu p {
   margin: 0;
   display: flex;
   flex-direction: row;
   font-size: 2rem;
-  text-shadow: 2px 2px 1px var(--secondary-background-color);
   padding: 1rem;
   text-align: center;
 }
 
-.header nav img {
+.menu img {
   padding: 1rem;
 }
 
 .header h1 {
-  padding: 1rem;
-  font-size: 4.3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 4rem;
   text-align: center;
-  text-shadow: 2px 2px 8px var(--secondary-background-color);
+  margin-top: 6rem;
+  margin-bottom: 32px;
 }
 
-.header button {
+.callToAction {
   border: none;
+  text-align: center;
   background-color: var(--highlight-color);
-  height: 4rem;
-  width: 20rem;
+  padding: 1.3rem 2rem 1.3rem 2rem;
   border-radius: 100px;
   margin: auto;
   color: var(--text-color);
   font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: 1.5px;
+  text-decoration: none;
+  user-select: none;
 }
 
 .titleHighlight {
@@ -70,11 +75,24 @@
 .bulletList {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  padding: 1rem;
+}
+
+.bulletList .callToAction {
+  margin-top: 32px;
+  margin-bottom: 32px;
 }
 
 .bulletList img {
-  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.bulletList h1 {
+  font-size: 1.8rem;
+}
+
+.bulletList p {
+  margin-bottom: 3rem;
 }
 
 .bulletGroup {
@@ -109,6 +127,20 @@
   z-index: 1;
   background-color: none;
   background: none;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--secondary-background-color);
+  padding: 1rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.footer a {
+  color: var(--text-color);
 }
 
 @media only screen and (min-width: 800px) {

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./page.module.css";
 
 // const pacifico = Pacifico({ subsets: ["latin"] });
@@ -35,46 +36,64 @@ function Section({
 export default function RooMe() {
   return (
     <>
+      <nav className={styles.menu}>
+        <p>
+          <span>Roo</span>
+          <span className={styles.titleHighlight}>Me</span>
+        </p>
+        <img src="/images/icons/menu.svg" width="32px" />
+      </nav>
       <header className={styles.header}>
         <div>
-          <nav>
-            <p>
-              <span>Roo</span>
-              <span className={styles.titleHighlight}>Me</span>
-            </p>
-            <img src="/images/icons/menu.svg" width="32px" />
-          </nav>
-
           <h1>
             Your Home Awaits<span className={styles.titleHighlight}>.</span>
           </h1>
           <p>Join the revolution in co-living with RooMe</p>
-          <button>Start for free</button>
+          <Link href="/" className={styles.callToAction}>
+            Start for free
+          </Link>
         </div>
       </header>
       <main>
         <div className={styles.bulletList}>
-          <h1>
+          <h2>
             Co-Living, <span className={styles.titleHighlight}>Simplified</span>
-          </h1>
+          </h2>
           <img src="/images/landing/coffee_break.svg" />
           <p>
-            Explore across hundreds of beautiful houses, set your budget and
+            Explore across hundreds of beautiful houses, set your budget and we
             will find great options for you
           </p>
-          <img src="/images/landing/step1_0.jpg" />
-          <h2>Share the space with the perfect match</h2>
+          <hr></hr>
+
+          <h2>
+            Use your time in what{" "}
+            <span className={styles.titleHighlight}>matters the most</span>
+          </h2>
+          <img src="/images/landing/learning.svg" />
           <p>
-            Finding a roommate can be hard but with our AI powered system
-            connecting with people matching your core values has never been
-            easier
+            Don&apos;t waste time and money looking day after day for the
+            perfect place, let us find it for you.
           </p>
-          <img src="/images/landing/boots.jpg" />
-          <h2>Affordable but neat</h2>
-          <p>Explore across hundreds of beautiful houses</p>
-          <img src="/images/landing/coffee.jpg" />
+          <hr></hr>
+
+          <h2>
+            Start building your{" "}
+            <span className={styles.titleHighlight}>next chapter!</span>
+          </h2>
+          <img src="/images/landing/house.svg" />
+          <p>The perfect house is around the corner, just one click away!</p>
+          <Link href="/" className={styles.callToAction}>
+            Stay tuned!
+          </Link>
         </div>
       </main>
+      <footer className={styles.footer}>
+        <p>Made with ❤️ by Juan</p>
+        <a href="https://storyset.com/people">
+          People illustrations by Storyset
+        </a>
+      </footer>
     </>
   );
 }
